@@ -13,11 +13,17 @@ body div {
 
 canvas {
   position: absolute;
+  display: block;
+}
+
+#game-canvas {
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 93vh;
-  display: block;
+}
+
+#text-canvas {
+  left: 0;
+  top: 300;
 }
 
 
