@@ -7,7 +7,74 @@ html, body, img {
   vertical-align: baseline;
 }
 
+body div {
+  position: relative;
+}
+
 canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
+  display: block;
+}
+
+
+/* Audio */
+audio::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0);
+}
+
+audio::-webkit-media-controls-mute-button {
+}
+
+audio::-webkit-media-controls-play-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-timeline-container {
+  display: none;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+
+audio::-webkit-media-controls-timeline {
+  display: none;
+}
+
+audio::-webkit-media-controls-volume-slider-container {
+}
+
+audio::-webkit-media-controls-volume-slider {
+}
+
+audio::-webkit-media-controls-seek-back-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-seek-forward-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-rewind-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-return-to-realtime-button {
+  display: none;
+}
+
+audio::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
 }
