@@ -8,7 +8,7 @@
 
 #Ignore node modules and bundles
 node_modules/
-bundle.js
+#bundle.js
 bundle.js.map
 
 # Ignore application configuration
