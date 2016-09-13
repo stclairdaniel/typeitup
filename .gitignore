@@ -7,7 +7,7 @@
 /tmp
 
 #Ignore node modules and bundles
-node_modules/
+#node_modules/
 #bundle.js
 bundle.js.map
 
