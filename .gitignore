@@ -5,6 +5,7 @@
 /log/*
 !/log/.keep
 /tmp
+.DS_Store
 
 #Ignore node modules and bundles
 #node_modules/
