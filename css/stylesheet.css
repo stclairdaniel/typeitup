@@ -31,8 +31,15 @@ canvas {
 
 
 /* Audio */
+audio {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 audio::-webkit-media-controls-panel {
   background: rgba(0, 0, 0, 0);
+
 }
 
 audio::-webkit-media-controls-mute-button {
