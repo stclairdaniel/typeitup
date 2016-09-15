@@ -32,6 +32,7 @@ canvas {
 .links {
   display: flex;
   justify-content: center;
+  height: 80px;
 }
 
 .links img {
