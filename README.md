@@ -18,12 +18,12 @@ Missing the letter will cause you to lose a little health, but don't worry - hit
 
 The song class takes a few necessary parameters. Length in seconds, BPM (which can be calculated by looking at the waveform or analyzed by many free online tools), timeOffset, which is the time between the start of the audio file and the first beat (this is easy to find looking at the waveform in a free audio editing software such as Audacity), total beats, which can be calculated or counted by listening, and hSpace, which is an adjustable number that regulates the pixel count between letters. In the song class, an algorithm calculates the number of milliseconds between each leftward pixel adjust based on BPM and hSpace to ensure the next letter crosses the hit zone in time with the next beat. A lower hSpace will cause slower scrolling and more tightly bunched letters, while a higher hSpace will increase the scroll speed and place more distance between the letters. I found an hSpace of 100 pixels to be a comfortable speed for songs in the BPM range of 100-300 (almost all music).
 
-One slight technical restriction is that only BPMs that are multiples of the following BPMs can be used: (100, 120, 125, 150). The reason for this is that hSpace must not be fractional, as small rounding errors will eventually compound and cause letters to not cross the hit box at the appropriate time. To calculate these BPMs, I worked backwards using the following:
+One slight technical restriction is that only certain BPMs can be uses. The reason for this is that hSpace must not be fractional, as small rounding errors will eventually compound and cause letters to not cross the hit box at the appropriate time. To calculate these BPMs, I worked backwards using the following:
 
 TimeBetweenBeats (TBB) = (60s * 1000 ms/s) / BPM
 Interval = TBB / hSpace
 
-Since hSpace must be a whole number, BPM must be a factor of 60000. The prime factors of 60000 are 2^5 * 3 * 5^4. Knowing nearly all recorded music falls somewhere between ~50 and 200 BPM, and that any song with quarter notes at X BPM can be reinterpreted as eighth notes at X/2 BPM, I came up with the list of acceptable BPMs that are evenly divisible by 60000 and somewhere in that range.
+Since hSpace must be a whole number, BPM must be a factor of 60000. The prime factors of 60000 are 2^5 * 3 * 5^4. Knowing nearly all recorded music falls somewhere between ~50 and 200 BPM, and that any song with quarter notes at X BPM can be reinterpreted as eighth notes at X/2 BPM, I came up with the list of acceptable BPMs that are evenly divisible by 60000 and somewhere in that range. They include 100, 120, 125, 150, and 200 for commonly used BPMs.
 
 I also used the HTML5 audio player's readyState property to ensure songs are loaded even over a slow connection before starting game logic so that songs and display stay synced.
 
