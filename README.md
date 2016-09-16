@@ -1,5 +1,7 @@
 ## Type It Up
 
+[Live](https://stclairdaniel.github.io/typeitup/)
+
 ### Background
 
 Pump It Up and Dance Dance Revolution are popular rhythm games in which a player watches scrolling arrows and steps on the corresponding arrow on a dance pad, following the music's beat. Type It Up modifies this formula by changing the arrows to keys on a keyboard. Players can type along to fun tunes to help increase their typing speed.
