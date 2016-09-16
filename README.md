@@ -31,9 +31,12 @@ With all this in place, I accomplished scrolling letters simply by calculating t
 
 ```javascript
 
-this.secondsPerBeat = 60 / bpm;
-this.hAdjustIntervalTime = (this.secondsPerBeat / hSpace) * 1000;
+//Start hAdjust interval to move letters across the screen
+//Multiply by constant to increase to over minimum of 10ms
+//Older browsers can't support <10ms intervals
+const constant = Math.ceil(this.bpm / 60);
 this.hAdjustInterval = window.setInterval( () => {
-  this.hAdjust += 3;
-}, this.hAdjustIntervalTime * 3);
+  this.hAdjust += constant;
+}, this.hAdjustIntervalTime * constant);
+}
 ```
