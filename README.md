@@ -6,13 +6,13 @@
 
 Pump It Up and Dance Dance Revolution are popular rhythm games in which a player watches scrolling arrows and steps on the corresponding arrow on a dance pad, following the music's beat. Type It Up modifies this formula by changing the arrows to keys on a keyboard. Players can type along to fun tunes to help increase their typing speed.
 
+![gameplay](http://imgur.com/Vim0WbU.gif)
+
 ### How To Play
 
 On the main menu, simply use the mouse or the up/down keys and enter to choose a difficulty. Difficulty is based on song beats per minute, or BPM, which is then converted into words per minute, or WPM based on a five letters per word standard conversion. Note: Even if you are a fast typer, typing to the beat is a whole new challenge. Don't try to tackle Hard right away - it's quite difficult!
 
 Once the song begins, place your hands on the home row. Wait for the 3...2...1... countdown and type the letters with the beat as they enter the hit zone, denoted by vertical black bars.
-
-![gameplay](http://i.imgur.com/BNZxuHJ.jpg)
 
 Missing the letter will cause you to lose a little health, but don't worry - hitting letters will restore a little. If you lose all your health, you'll get a gameover.
 
@@ -29,13 +29,9 @@ Since hSpace must be a whole number, BPM must be a factor of 60000. The prime fa
 
 I also used the HTML5 audio player's readyState property to ensure songs are loaded even over a slow connection before starting game logic so that songs and display stay synced.
 
-With all this in place, I accomplished scrolling letters simply by calculating the hAdjustIntervalTime, which is the amount of ms for each pixel shift. Since older browsers can't support intervals of under 10ms, I multiplied by a small factor to get an interval time > 10ms.
+With all this in place, I accomplished scrolling letters simply by calculating the hAdjustIntervalTime, which is the amount of ms for each pixel shift. Since older browsers can't support intervals of under 10ms, I multiplied by a factor of BPM/60 to ensure an interval time > 10ms.
 
 ```javascript
-
-//Start hAdjust interval to move letters across the screen
-//Multiply by constant to increase to over minimum of 10ms
-//Older browsers can't support <10ms intervals
 const constant = Math.ceil(this.bpm / 60);
 this.hAdjustInterval = window.setInterval( () => {
   this.hAdjust += constant;
